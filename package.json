@@ -1,0 +1,25 @@
+{
+  "name": "proyecto-seminario-de-software",
+  "version": "1.0.0",
+  "description": "App de manejo de presupuestos",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodejs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisdario71196/Proyecto-Seminario-de-Software---I-Parcial.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongoose",
+    "handlebars"
+  ],
+  "author": "Luis Dario Rodriguez Inestroza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisdario71196/Proyecto-Seminario-de-Software---I-Parcial/issues"
+  },
+  "homepage": "https://github.com/luisdario71196/Proyecto-Seminario-de-Software---I-Parcial#readme"
+}
