@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const indexController = require("../controllers/indexController");
+const layoutController = require("../controllers/layoutController");
 module.exports = () => {
-  router.get("/", indexController.mostrarMenu);
+  router.get("/", layoutController.mostrarMenu);
 
   return router;
 };
