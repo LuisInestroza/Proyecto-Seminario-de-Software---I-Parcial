@@ -11,16 +11,16 @@ require("dotenv").config({ path: "variables.env" });
 
 const app = express();
 
+app.set("view engine", "handlebars");
+
+app.use(express.static(path.join(__dirname, "public")));
+
 app.engine(
   "handlebars",
   exphbs({
     defaultLayout: "layout"
   })
 );
-
-app.set("view engine", "handlebars");
-
-app.use(express.static(path.join(__dirname, "public")));
 
 app.use(
   session({
