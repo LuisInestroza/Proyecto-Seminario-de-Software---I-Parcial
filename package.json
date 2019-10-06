@@ -4,7 +4,7 @@
   "description": "App de manejo de presupuestos",
   "main": "index.js",
   "scripts": {
-    "test": "nodejs"
+    "start": "nodemon ./index"
   },
   "repository": {
     "type": "git",
@@ -24,8 +24,10 @@
   "homepage": "https://github.com/luisdario71196/Proyecto-Seminario-de-Software---I-Parcial#readme",
   "dependencies": {
     "connect-mongo": "^3.0.0",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
+    "express-session": "^1.16.2",
     "mongoose": "^5.7.3"
   },
   "devDependencies": {
