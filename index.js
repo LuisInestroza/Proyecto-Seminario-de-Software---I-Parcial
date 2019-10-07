@@ -6,21 +6,27 @@ const path = require("path");
 const session = require("express-session");
 const router = require("./routes/index");
 const MongoStore = require("connect-mongo")(session);
+const bodyParser = require("body-parser");
 
 require("dotenv").config({ path: "variables.env" });
 
 const app = express();
 
-app.set("view engine", "handlebars");
+// Habilitar Body-parse
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
+app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.engine(
   "handlebars",
   exphbs({
-    defaultLayout: "layout"
+    defaultLayout: "layout",
+    layoutsDir: path.join(app.get("views"), "layouts")
   })
 );
+app.set("view engine", "handlebars");
 
 app.use(
   session({
