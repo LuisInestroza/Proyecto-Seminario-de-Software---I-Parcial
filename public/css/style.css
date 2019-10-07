@@ -1,4 +1,4 @@
-@import 'framework.css';
+@import "framework.css";
 /* THIS IS A FREE VERSION OF STARTUP 3! */
 /* 
  Table of contents:
@@ -31,7 +31,8 @@ body.dev {
   background: #ccc;
   min-height: 10000px;
 }
-header, section {
+header,
+section {
   overflow: hidden;
 }
 header {
@@ -49,14 +50,19 @@ nav {
 nav.transparent {
   background: transparent;
 }
-a, button {
+a,
+button {
   cursor: pointer;
   transition: all 0.25s;
 }
-a:hover, button:hover {
+a:hover,
+button:hover {
   text-decoration: none;
 }
-a:active, button:active, a:focus, button:focus {
+a:active,
+button:active,
+a:focus,
+button:focus {
   text-decoration: none;
   outline: none;
 }
@@ -64,7 +70,8 @@ button {
   border: none;
   outline: none !important;
 }
-input, textarea {
+input,
+textarea {
   border: 0;
   outline: none;
   background: transparent;
@@ -76,22 +83,30 @@ label {
   font-weight: 400;
   cursor: pointer;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   margin: 0;
   font-weight: 700;
   font-family: Poppins;
 }
-h1, h2 {
+h1,
+h2 {
   font-size: 58px;
   line-height: 70px;
 }
-h1.big, h2.big {
+h1.big,
+h2.big {
   font-size: 72px;
   line-height: 86px;
 }
-h1.small, h2.small {
+h1.small,
+h2.small {
   font-size: 42px;
   line-height: 52px;
   font-weight: 700;
@@ -100,7 +115,8 @@ h3 {
   font-size: 42px;
   line-height: 52px;
 }
-b, strong {
+b,
+strong {
   font-weight: 700;
 }
 .alert {
@@ -113,7 +129,8 @@ b, strong {
   max-width: 970px;
   z-index: 2000;
 }
-.alert-dismissable .close, .alert-dismissible .close {
+.alert-dismissable .close,
+.alert-dismissible .close {
   top: 0;
 }
 /* Slick slider */
@@ -121,7 +138,8 @@ b, strong {
   /* background: #fff url("../i/ajax-loader.gif") center center no-repeat; */
 }
 /* Arrows */
-.slick-prev, .slick-next {
+.slick-prev,
+.slick-next {
   position: absolute;
   display: block;
   height: 32px;
@@ -138,18 +156,26 @@ b, strong {
   outline: none;
   z-index: 1;
 }
-.slick-prev:hover, .slick-next:hover, .slick-prev:focus, .slick-next:focus {
+.slick-prev:hover,
+.slick-next:hover,
+.slick-prev:focus,
+.slick-next:focus {
   outline: none;
   background: transparent;
   color: transparent;
 }
-.slick-prev:hover:before, .slick-next:hover:before, .slick-prev:focus:before, .slick-next:focus:before {
+.slick-prev:hover:before,
+.slick-next:hover:before,
+.slick-prev:focus:before,
+.slick-next:focus:before {
   opacity: 0.5;
 }
-.slick-prev.slick-disabled:before, .slick-next.slick-disabled:before {
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
   opacity: 0.3;
 }
-.slick-prev:before, .slick-next:before {
+.slick-prev:before,
+.slick-next:before {
   display: block;
   content: "";
   width: 32px;
@@ -268,24 +294,36 @@ b, strong {
 /* 2. Common responsive styles */
 /* Smaller than 1200px */
 @media (max-width: 1199.98px) {
-  header[class^="pt-"], section[class^="pt-"], header[class*=" pt-"], section[class*=" pt-"] {
+  header[class^="pt-"],
+  section[class^="pt-"],
+  header[class*=" pt-"],
+  section[class*=" pt-"] {
     padding-top: 80px;
   }
-  header[class^="pb-"], section[class^="pb-"], header[class*=" pb-"], section[class*=" pb-"] {
+  header[class^="pb-"],
+  section[class^="pb-"],
+  header[class*=" pb-"],
+  section[class*=" pb-"] {
     padding-bottom: 80px;
   }
-  h1 br, h2 br, h3 br, .text-adaptive br {
+  h1 br,
+  h2 br,
+  h3 br,
+  .text-adaptive br {
     display: none;
   }
-  h1, h2 {
+  h1,
+  h2 {
     font-size: 52px;
     line-height: 62px;
   }
-  h1.big, h2.big {
+  h1.big,
+  h2.big {
     font-size: 62px;
     line-height: 72px;
   }
-  h1.small, h2.small {
+  h1.small,
+  h2.small {
     font-size: 36px;
     line-height: 46px;
   }
@@ -299,15 +337,18 @@ b, strong {
 }
 /* Smaller than 992px */
 @media (max-width: 991.98px) {
-  h1, h2 {
+  h1,
+  h2 {
     font-size: 42px;
     line-height: 52px;
   }
-  h1.big, h2.big {
+  h1.big,
+  h2.big {
     font-size: 52px;
     line-height: 62px;
   }
-  h1.small, h2.small {
+  h1.small,
+  h2.small {
     font-size: 32px;
     line-height: 42px;
   }
@@ -338,15 +379,18 @@ b, strong {
 }
 /* Smaller than 768px */
 @media (max-width: 767.98px) {
-  h1, h2 {
+  h1,
+  h2 {
     font-size: 32px;
     line-height: 42px;
   }
-  h1.big, h2.big {
+  h1.big,
+  h2.big {
     font-size: 42px;
     line-height: 52px;
   }
-  h1.small, h2.small {
+  h1.small,
+  h2.small {
     font-size: 26px;
     line-height: 36px;
   }
@@ -377,7 +421,8 @@ b, strong {
     font-size: 18px;
     font-weight: 500;
   }
-  .btn.lg[class^="border-"], .btn.lg[class*=" border-"] {
+  .btn.lg[class^="border-"],
+  .btn.lg[class*=" border-"] {
     line-height: 46px;
   }
   .btn.xl {
@@ -387,7 +432,8 @@ b, strong {
     font-size: 18px;
     font-weight: 500;
   }
-  .btn.xl[class^="border-"], .btn.xl[class*=" border-"] {
+  .btn.xl[class^="border-"],
+  .btn.xl[class*=" border-"] {
     line-height: 56px;
   }
   .input.lg {
@@ -405,15 +451,18 @@ b, strong {
 }
 /* Smaller than 576px */
 @media (max-width: 575.98px) {
-  h1, h2 {
+  h1,
+  h2 {
     font-size: 26px;
     line-height: 36px;
   }
-  h1.big, h2.big {
+  h1.big,
+  h2.big {
     font-size: 32px;
     line-height: 42px;
   }
-  h1.small, h2.small {
+  h1.small,
+  h2.small {
     font-size: 22px;
     line-height: 32px;
   }
@@ -422,7 +471,8 @@ b, strong {
     line-height: 50px;
     padding: 0 30px;
   }
-  .btn.xl[class^="border-"], .btn.xl[class*=" border-"] {
+  .btn.xl[class^="border-"],
+  .btn.xl[class*=" border-"] {
     line-height: 46px;
   }
 }
@@ -480,7 +530,8 @@ b, strong {
 }
 /* 7. Features */
 @media (max-width: 1199.98px) {
-  .feature_1[class^="pb-"], .feature_1[class*=" pb-"] {
+  .feature_1[class^="pb-"],
+  .feature_1[class*=" pb-"] {
     padding-bottom: 30px;
   }
 }
@@ -494,7 +545,8 @@ b, strong {
   }
 }
 @media (max-width: 1199.98px) {
-  .feature_2[class^="pb-"], .feature_2[class*=" pb-"] {
+  .feature_2[class^="pb-"],
+  .feature_2[class*=" pb-"] {
     padding-bottom: 30px;
   }
   .feature_2 .description {
@@ -618,7 +670,8 @@ b, strong {
   left: -15px;
 }
 @media (max-width: 991.98px) {
-  .pricing_table_1[class^="pb-"], .pricing_table_1[class*=" pb-"] {
+  .pricing_table_1[class^="pb-"],
+  .pricing_table_1[class*=" pb-"] {
     padding-bottom: 30px;
   }
   .pricing_table_1 .block {
@@ -646,7 +699,8 @@ b, strong {
 .contact_1 .separate {
   position: relative;
 }
-.contact_1 .separate:before, .contact_1 .separate:after {
+.contact_1 .separate:before,
+.contact_1 .separate:after {
   content: " ";
   display: block;
   position: absolute;

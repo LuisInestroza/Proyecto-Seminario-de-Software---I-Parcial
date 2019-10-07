@@ -257,6 +257,11 @@
 .btn.border-light:hover {
   border-color: #000;
 }
+.col-lg-4 {
+margin-left: 335px;
+margin-top: 20px;
+}
+
 .btn.border-dark {
   border: 2px solid #2f1893;
 }
