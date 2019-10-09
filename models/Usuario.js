@@ -11,11 +11,11 @@ const usuarioSchema = new mongoose.Schema({
   },
   nombre: {
     type: String,
-    trim: true
+   
   },
   password: {
     type: String,
-    trim: true
+ 
   }
 });
 
