@@ -2,6 +2,12 @@
 const mogoose = require("mongoose");
 const Usuario = mogoose.model("Usuario");
 
+exports.iniciarLogin = (req, res) => {
+  res.render("login", {
+    nombrePagina: "Login"
+  });
+};
+
 // Crear un nuevo usuario
 exports.formularioNuevoUsuario = (req, res) => {
   res.render("crearUsuario", {

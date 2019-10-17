@@ -13,5 +13,6 @@ mongoose.connection.on("error", error => {
   console.log(error);
 });
 
-// Importar modelo
+// Importar modelos
 require("../models/Usuario");
+require("../models/Presupuesto");

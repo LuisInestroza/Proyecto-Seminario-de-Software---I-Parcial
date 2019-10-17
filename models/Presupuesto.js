@@ -9,7 +9,16 @@ const presupuestoSchema = new mongoose.Schema({
     trim: true
   },
   total: {
-    type: Float64Array,
+    type: String,
+    default: 0,
     trim: true
+  },
+  autor: {
+    type: mongoose.Schema.ObjectId,
+    ref: "Usuarios",
+    required: "El autor es importante"
   }
 });
+
+// Exportar el modelo
+module.exports = mongoose.model("Presupuesto", presupuestoSchema);

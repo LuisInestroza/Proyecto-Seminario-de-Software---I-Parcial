@@ -3,3 +3,9 @@ exports.presupuestoUsuario = (req, res) => {
     nombrePagina: "Presupuesto"
   });
 };
+
+exports.crearPresupuesto = (req, res) => {
+  res.render("crearPresupuesto", {
+    nombrePagina: "Crear Presupuesto"
+  });
+};
