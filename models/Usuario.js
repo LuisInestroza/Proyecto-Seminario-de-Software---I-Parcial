@@ -10,12 +10,10 @@ const usuarioSchema = new mongoose.Schema({
     trim: true
   },
   nombre: {
-    type: String,
-   
+    type: String
   },
   password: {
-    type: String,
- 
+    type: String
   }
 });
 
