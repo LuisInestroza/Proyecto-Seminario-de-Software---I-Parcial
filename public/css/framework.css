@@ -21,6 +21,13 @@
 .thin {
   font-weight: 100;
 }
+.table {
+  color: #ffff;
+}
+
+.table-hover tbody tr:hover {
+color: #fff;
+}
 .extralight {
   font-weight: 200;
 }
@@ -134,9 +141,7 @@
 .btn.sm[class^="border-"], .btn.sm[class*=" border-"] {
   line-height: 36px;
 }
-.btn.md {
-  /* regular size */
-}
+
 .btn.lg {
   height: 60px;
   line-height: 60px;
@@ -495,11 +500,7 @@ textarea.input {
   padding-bottom: 15px;
 }
 /* Checkboxes */
-input[type=checkbox], input[type=radio] {
-  /* Borders */
-  /* Backgrounds */
-  /* styles on focus */
-}
+
 input[type=checkbox] + label, input[type=radio] + label {
   line-height: 24px;
 }

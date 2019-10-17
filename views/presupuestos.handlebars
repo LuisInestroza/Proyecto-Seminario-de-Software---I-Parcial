@@ -1,0 +1,59 @@
+<section class="bg-light form_2">
+    <form action="/nuevo/usuario" method="post" class=" pb-100">
+        <div data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+            <div class="container" id="formulario-listadoPagos" action="/links/pagos">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+
+                        <br>
+                        <br>
+                        <br>
+                        <h2>Listado de pagos de clases</h2>
+                        <br>
+                        <br>
+                        <div data-aos-duration="600" data-aos="fade-down" data-aos-delay="600">
+                            <a href="" class="btn btn-primary">Agregar</a>
+                        </div>
+
+                        <br>
+                        <br>
+                        <br>
+
+                        <table class="table table-hover">
+
+                            <thead>
+                                <tr>
+                                    <td scope="col">Transacción</td>
+                                    <td scope="col">Acciones</td>
+                                    <td scope="col">Metodo Pago</td>
+                                    <td scope="col">Total</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{!-- {{#each links}} --}}
+
+                                <tr>
+                                    {{!-- <td>{{numeroCuenta}}</td> --}}
+
+                                    <td>1</td>
+                                    <td>Pago Luz</td>
+                                    <td>Efectivo</td>
+                                    <td>L. 1500</td>
+                                </tr>
+                                {{!-- {{/each}} --}}
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </form>
+
+</section>

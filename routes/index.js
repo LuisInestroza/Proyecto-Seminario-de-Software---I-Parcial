@@ -6,6 +6,7 @@ const router = express.Router();
 const homeController = require("../controllers/homeController");
 const loginController = require("../controllers/loginController");
 const usuarioController = require("../controllers/usuarioController");
+const presupuestoController = require("../controllers/presupuestoController");
 // Rutas
 module.exports = () => {
   router.get("/", homeController.mostrarMenu);
@@ -13,6 +14,7 @@ module.exports = () => {
 
   router.get("/nuevo/usuario", usuarioController.formularioNuevoUsuario);
   router.post("/nuevo/usuario", usuarioController.agregarUsuario);
+  router.get("/presupuestos", presupuestoController.presupuestoUsuario);
 
   return router;
 };

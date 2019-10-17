@@ -1,91 +1,38 @@
-{{!-- <!DOCTYPE html>
-<html lang="es">
+<section class="bg-light form_2">
+    <form action="/nuevo/usuario" method="post" class="pt-105 pb-100">
+        <h2 class="mb-45 small" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+            Ingresa tus Datos
+        </h2>
+        <div data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+            <div class="mb-10 f-14 semibold text-uppercase sp-20">Nombre</div>
+            <input type="text" name="nombre" placeholder="Tu nombre"
+                class="mb-25 w-full input lg border-gray focus-action-1 color-heading placeholder-gray text-center text-sm-left"
+                required />
+        </div>
 
-<head>
-    <meta charset="utf-8" />
-    <title>Startup 3.1.1 - Project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,500,700,800,900|Poppins:100,200,300,400,500,600,700,800,900&amp;subset=latin"
-        rel="stylesheet" />
-    <!-- Bootstrap 4.3.1 CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-    <!-- AOS 2.3.1 jQuery plugin CSS (Animations) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <!-- FontAwesome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <!-- Startup 3 CSS (Styles for all blocks) -->
-    <link href="/css/styleCrearUsuario.css" rel="stylesheet" />
-    <!-- jQuery 3.3.1 -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-</head> --}}
-
-<body>
-    <!-- Form 2 -->
-
-    <section class="bg-light form_2">
-        <form action="/nuevo/usuario" method="post" class="pt-105 pb-100">
-            <h2 class="mb-45 small" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-                Ingresa tus Datos
-            </h2>
-            <div data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-                <div class="mb-10 f-14 semibold text-uppercase sp-20">Nombre</div>
-                <input type="text" name="nombre" placeholder="Tu nombre"
-                    class="mb-25 w-full input lg border-gray focus-action-1 color-heading placeholder-gray text-center text-sm-left"
-                    required />
+        <div data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+            <div class="mb-10 f-14 semibold text-uppercase sp-20">
+                Correo Electronico
             </div>
+            <input type="email" name="email" placeholder="Tu correo"
+                class="mb-25 w-full input lg border-gray focus-action-1 color-heading placeholder-gray text-center text-sm-left"
+                required />
+        </div>
 
-            <div data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-                <div class="mb-10 f-14 semibold text-uppercase sp-20">
-                    Correo Electronico
-                </div>
-                <input type="email" name="email" placeholder="Tu correo"
-                    class="mb-25 w-full input lg border-gray focus-action-1 color-heading placeholder-gray text-center text-sm-left"
-                    required />
+        <div data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
+            <div class="mb-10 f-14 semibold text-uppercase sp-20">
+                Password
             </div>
+            <input type="password" name="password" placeholder="Tu password"
+                class="mb-25 w-full input lg border-gray focus-action-1 color-heading placeholder-gray text-center text-sm-left"
+                required />
+        </div>
 
-            <div data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-                <div class="mb-10 f-14 semibold text-uppercase sp-20">
-                    Password
-                </div>
-                <input type="password" name="password" placeholder="Tu password"
-                    class="mb-25 w-full input lg border-gray focus-action-1 color-heading placeholder-gray text-center text-sm-left"
-                    required />
-            </div>
-
-            <div class="mt-25 d-flex flex-wrap align-items-center buttons" data-aos-duration="600" data-aos="fade-down"
-                data-aos-delay="0">
-                <button class="mr-20 mb-20 mb-xl-0 w-210 btn lg action-1">
-                    Crear Cuenta
-                </button>
-            </div>
-        </form>
-    </section>
-
-
-    {{!-- <!-- Bootstrap 4.3.1 JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <!-- Google maps JS API -->
-    <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"></script>
-    <!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- AOS 2.3.1 jQuery plugin JS (Animations) -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
-    <script src="/js/jquery.maskedinput.min.js"></script>
-    <!-- Startup 3 JS (Custom js for all blocks) -->
-    <script src="/js/script.js"></script>
-</body>
-
-</html> --}}
+        <div class="mt-25 d-flex flex-wrap align-items-center buttons" data-aos-duration="600" data-aos="fade-down"
+            data-aos-delay="0">
+            <button class="mr-20 mb-20 mb-xl-0 w-210 btn lg action-1">
+                Crear Cuenta
+            </button>
+        </div>
+    </form>
+</section>
