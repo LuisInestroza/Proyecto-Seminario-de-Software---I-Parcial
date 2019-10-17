@@ -140,13 +140,19 @@
 .btn.lg {
   height: 60px;
   line-height: 60px;
-  padding: 0 40px;
+  padding: 0 10px;
   font-size: 20px;
   font-weight: 600;
 }
 .btn.lg[class^="border-"], .btn.lg[class*=" border-"] {
   line-height: 56px;
 }
+button.mr-20 {
+  border-left-style: solid;
+  border-left-width: 0px;
+  margin-left: 190px;
+}
+
 .btn.xl {
   height: 70px;
   line-height: 70px;

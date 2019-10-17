@@ -1,5 +1,5 @@
 exports.mostrarMenu = (req, res) => {
-  res.render("login", {
+  res.render("home", {
     nombrePagina: "Presupuestos"
   });
 };

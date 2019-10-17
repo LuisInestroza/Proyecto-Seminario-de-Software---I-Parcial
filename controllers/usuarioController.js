@@ -13,7 +13,7 @@ exports.formularioNuevoUsuario = (req, res) => {
 exports.agregarUsuario = async (req, res) => {
   const usuario = new Usuario(req.body);
   const nuevoUsuario = await usuario.save();
-  console.log(usuario);
+  // console.log(usuario);
 
   res.redirec("/nuevo/usuario");
 };

@@ -3,12 +3,12 @@ const express = require("express");
 // Importar router
 const router = express.Router();
 // Importar los Controller
-const layoutController = require("../controllers/layoutController");
+const homeController = require("../controllers/homeController");
 const loginController = require("../controllers/loginController");
 const usuarioController = require("../controllers/usuarioController");
 // Rutas
 module.exports = () => {
-  router.get("/", layoutController.mostrarMenu);
+  router.get("/", homeController.mostrarMenu);
   router.get("/usuario/iniciarSesion", loginController.iniciarLogin);
 
   router.get("/nuevo/usuario", usuarioController.formularioNuevoUsuario);

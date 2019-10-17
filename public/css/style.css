@@ -55,6 +55,21 @@ button {
   cursor: pointer;
   transition: all 0.25s;
 }
+section.bg-light:nth-child(1) {
+  margin-left: 0px;
+  border-left-style: solid;
+  border-left-width: 0px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.pt-105 {
+  padding-left: 300px;
+  padding-right: 300px;
+}
+.feature_1 {
+  padding-left: 120px;
+  padding-right: 120px;
+}
 a:hover,
 button:hover {
   text-decoration: none;
@@ -110,6 +125,15 @@ h2.small {
   font-size: 42px;
   line-height: 52px;
   font-weight: 700;
+}
+.pt-105 {
+  padding-top: 30px;
+}
+.form_1 {
+  padding-top: 40px;
+}
+.content_2 {
+  padding-top: 70px;
 }
 h3 {
   font-size: 42px;

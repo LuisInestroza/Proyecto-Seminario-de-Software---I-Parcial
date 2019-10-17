@@ -3,6 +3,7 @@ require("./config/db");
 const express = require("express");
 const exphbs = require("express-handlebars");
 const path = require("path");
+const cookieParse = require("cookie-parser");
 const session = require("express-session");
 const router = require("./routes/index");
 const MongoStore = require("connect-mongo")(session);
@@ -22,11 +23,12 @@ app.use(express.static(path.join(__dirname, "public")));
 app.engine(
   "handlebars",
   exphbs({
-    defaultLayout: "layout",
-    layoutsDir: path.join(app.get("views"), "layouts")
+    defaultLayout: "layout"
   })
 );
 app.set("view engine", "handlebars");
+
+app.use(cookieParse());
 
 app.use(
   session({
