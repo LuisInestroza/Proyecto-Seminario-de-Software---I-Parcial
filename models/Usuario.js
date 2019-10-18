@@ -46,5 +46,24 @@ usuarioSchema.pre("save", function(next) {
   });
 });
 
+// Comparar el password
+usuarioSchema.methods.compararPassword = function(candidatePassword) {
+  return bcrypt.compareSync(candidatePassword, this.password);
+};
+usuarioSchema.methods.comparePassword = function(candidatePassword) {
+  const user = this;
+  return new Promise((resolve, reject) => {
+    bcrypt.compare(candidatePassword, user.password, (err, isMatch) => {
+      if (err) {
+        return reject(err);
+      }
+      if (!isMatch) {
+        return reject(false);
+      }
+      resolve(true);
+    });
+  }).catch();
+};
+
 // Exportar el modelo
 module.exports = mongoose.model("Usuario", usuarioSchema);

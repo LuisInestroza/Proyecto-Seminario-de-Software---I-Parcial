@@ -8,6 +8,8 @@ const session = require("express-session");
 const router = require("./routes/index");
 const MongoStore = require("connect-mongo")(session);
 const bodyParser = require("body-parser");
+const flash = require("connect-flash");
+const passport = require("./config/passport");
 
 require("dotenv").config({ path: "variables.env" });
 
@@ -39,6 +41,19 @@ app.use(
     store: new MongoStore({ mongooseConnection: mongoose.connection })
   })
 );
+
+// Implementar Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Alertas de los mensaje
+app.use(flash());
+
+// Middleware de los mensajes
+app.use((req, res, next) => {
+  res.locals.messages = flash.messages;
+  next();
+});
 
 app.use("/", router());
 
