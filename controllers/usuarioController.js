@@ -1,6 +1,7 @@
 // Importar Mogoose
 const mogoose = require("mongoose");
 const Usuario = mogoose.model("Usuario");
+const { validationResult } = require("express-validator");
 
 exports.iniciarLogin = (req, res) => {
   res.render("login", {
@@ -16,9 +17,10 @@ exports.formularioNuevoUsuario = (req, res) => {
 };
 
 // Agregar un nuevo usuario a la base de datos
-exports.agregarUsuario = async (req, res) => {
+exports.agregarUsuario = async (req, res, next) => {
   const usuario = new Usuario(req.body);
-  const nuevoUsuario = await usuario.save();
+
+  await usuario.save();
   console.log(usuario);
 
   res.redirec("/nuevo/usuario");
