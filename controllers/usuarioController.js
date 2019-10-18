@@ -20,8 +20,10 @@ exports.formularioNuevoUsuario = (req, res) => {
 exports.agregarUsuario = async (req, res, next) => {
   const usuario = new Usuario(req.body);
 
-  await usuario.save();
-  console.log(usuario);
+  // Hacer la insercion de datos
+  try {
+    await usuario.save();
+  } catch (error) {}
 
-  res.redirec("/nuevo/usuario");
+  // res.redirec("/nuevo/usuario");
 };
