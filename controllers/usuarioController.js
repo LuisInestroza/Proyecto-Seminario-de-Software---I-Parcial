@@ -2,6 +2,7 @@
 const mogoose = require("mongoose");
 const Usuario = mogoose.model("Usuario");
 const { validationResult } = require("express-validator");
+const Swal = require("sweetalert2");
 
 // Iniciar con el login
 exports.iniciarLogin = (req, res) => {
