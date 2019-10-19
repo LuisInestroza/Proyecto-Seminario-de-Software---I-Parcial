@@ -46,6 +46,16 @@ usuarioSchema.pre("save", function(next) {
   });
 });
 
+// Hooks para poder pasar los errores de MongoBD hacia express validator
+usuarioSchema.post("save", function(error, doc, next) {
+  // Verificar que es un error de MongoDB
+  if (error.name === "MongoError" && error.code === 11000) {
+    next("Ya existe un usuario con ese correo electrónico");
+  } else {
+    next(error);
+  }
+});
+
 // Comparar el password
 usuarioSchema.methods.compararPassword = function(candidatePassword) {
   return bcrypt.compareSync(candidatePassword, this.password);

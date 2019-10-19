@@ -6,33 +6,35 @@ const router = express.Router();
 const homeController = require("../controllers/homeController");
 const usuarioController = require("../controllers/usuarioController");
 const presupuestoController = require("../controllers/presupuestoController");
+const authController = require("../controllers/authController");
 // Rutas
 module.exports = () => {
   // Menu princial
   router.get("/", homeController.mostrarMenu);
 
-  // Login del usuario
-  router.get("/usuario/iniciarSesion", usuarioController.iniciarLogin);
-  router.post("/usuario/iniciarSesion", usuarioController.autenticarUsario);
   // Agregar nuevo usuario
   router.get("/nuevo/usuario", usuarioController.formularioNuevoUsuario);
   router.post("/nuevo/usuario", usuarioController.agregarUsuario);
 
+  // Login del usuario
+  router.get("/usuario/iniciarSesion", usuarioController.iniciarLogin);
+  router.post("/usuario/iniciarSesion", authController.autenticarUsario);
+
   router.get(
     "/presupuestos",
-    usuarioController.verificarUsuario,
+    authController.verificarUsuario,
     presupuestoController.presupuestoUsuario
   );
 
   router.get(
     "/crear/presupuesto",
-    usuarioController.verificarUsuario,
+    authController.verificarUsuario,
     presupuestoController.crearPresupuesto
   );
 
   router.get(
     "/presupuestos",
-    usuarioController.verificarUsuario,
+    authController.verificarUsuario,
     presupuestoController.presupuestoUsuario
   );
   return router;
