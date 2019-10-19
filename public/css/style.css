@@ -66,6 +66,7 @@ section.bg-light:nth-child(1) {
   padding-left: 300px;
   padding-right: 300px;
 }
+
 .feature_1 {
   padding-left: 120px;
   padding-right: 120px;
@@ -127,7 +128,7 @@ h2.small {
   font-weight: 700;
 }
 .pt-105 {
-  padding-top: 30px;
+  padding-top: 3px;
 }
 .form_1 {
   padding-top: 40px;

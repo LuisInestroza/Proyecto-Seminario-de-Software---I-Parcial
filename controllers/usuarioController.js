@@ -25,7 +25,7 @@ exports.agregarUsuario = async (req, res, next) => {
   // Hacer la insercion de datos
   try {
     await usuario.save();
+    req.flash();
+    res.redirec("/usuario/iniciarSesion");
   } catch (error) {}
-
-  res.redirec("/usuario/iniciarSesion");
 };
