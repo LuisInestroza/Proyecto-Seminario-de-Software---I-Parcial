@@ -4,7 +4,9 @@
   "description": "App de manejo de presupuestos",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js"
+    "dev": "nodemon ./index.js",
+    "watch": "webpack --w --mode development",
+    "start": "concurrently \"npm run dev\" \"npm run watch\""
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
+    "concurrently": "^5.0.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.0.0",
     "cookie-parser": "^1.4.4",
@@ -39,6 +42,11 @@
     "sweetalert2": "^8.18.5"
   },
   "devDependencies": {
-    "nodemon": "^1.19.3"
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "nodemon": "^1.19.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
   }
 }
