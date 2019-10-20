@@ -19,16 +19,17 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.set("views", path.join(__dirname, "views"));
-app.use(express.static(path.join(__dirname, "public")));
-
 app.engine(
   "handlebars",
   exphbs({
-    defaultLayout: "layout"
+    defaultLayout: "layout",
+    helpers: require("./helpers/handlebars")
   })
 );
+
 app.set("view engine", "handlebars");
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(cookieParse());
 

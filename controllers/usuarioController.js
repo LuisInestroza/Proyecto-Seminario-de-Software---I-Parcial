@@ -2,7 +2,6 @@
 const mogoose = require("mongoose");
 const Usuario = mogoose.model("Usuario");
 const { validationResult } = require("express-validator");
-const Swal = require("sweetalert2");
 
 // Iniciar con el login
 exports.iniciarLogin = (req, res) => {
@@ -20,12 +19,35 @@ exports.formularioNuevoUsuario = (req, res) => {
 
 // Agregar un nuevo usuario a la base de datos
 exports.agregarUsuario = async (req, res, next) => {
+  const errores = validationResult(req);
+  const erroresArray = [];
+
+  if (!errores.isEmpty()) {
+    errores.array().map(error => erroresArray.push(error.msg));
+
+    // Enviar los datos
+    req.flash("error", erroresArray);
+    res.render("crearUsuario", {
+      nombrePagina: "Nuevo usuario",
+      messages: req.flash()
+    });
+    return;
+  }
+
   const usuario = new Usuario(req.body);
 
   // Hacer la insercion de datos
   try {
     await usuario.save();
-    req.flash();
-    res.redirec("/usuario/iniciarSesion");
-  } catch (error) {}
+    req.flash("correcto", ["Cuenta Resgistrada"]);
+  } catch (error) {
+    erroresArray.push(error);
+    req.flash("error", erroresArray);
+
+    // Renderizar
+    res.render("crearUsuario", {
+      nombrePagina: "Nuevo usuario",
+      messages: req.flash()
+    });
+  }
 };

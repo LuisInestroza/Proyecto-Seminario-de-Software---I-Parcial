@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <!-- jQuery 3.3.1 -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 </head>
 
 <body>
@@ -60,6 +61,12 @@
     </nav>
     <div class="contenido-principal contenedor">
 
+        {{#if messages}}
+        <div class="alertas">
+            {{#mostrarAlertas messages}}
+            {{/mostrarAlertas}}
+        </div>
+        {{/if}}
 
         {{{body}}}
 
@@ -85,6 +92,7 @@
     <script src="/js/jquery.maskedinput.min.js"></script>
     <!-- Startup 3 JS (Custom js for all blocks) -->
     <script src="/js/script.js"></script>
+    <script src="/js/app.js"></script>
 
 </body>
 

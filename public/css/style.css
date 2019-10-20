@@ -23,12 +23,13 @@ body {
   font-family: Poppins;
   font-weight: 400;
   font-size: 16px;
+  background: #002750;
   line-height: 26px;
   color: #fff;
   -webkit-font-smoothing: antialiased;
 }
 body.dev {
-  background: #ccc;
+  background: #002750;
   min-height: 10000px;
 }
 header,
@@ -359,6 +360,33 @@ strong {
     display: block;
   }
 }
+/** Flash Messages **/
+.alertas {
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 65px;
+}
+.alerta {
+  padding: 1rem 3rem;
+  color: white;
+  font-size: 2.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 0.3rem;
+}
+.correcto {
+  background-color: #00c897;
+}
+.error {
+  background-color: #c80045;
+}
+.desaparecer {
+  opacity: 0;
+}
+
 /* Smaller than 992px */
 @media (max-width: 991.98px) {
   h1,
