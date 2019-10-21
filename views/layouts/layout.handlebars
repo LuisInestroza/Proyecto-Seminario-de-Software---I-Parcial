@@ -2,63 +2,34 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>{{nombrePagina}}</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/img/favicon.png" type="image/x-icon">
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,500,700,800,900|Poppins:100,200,300,400,500,600,700,800,900&amp;subset=latin"
-        rel="stylesheet">
-    <!-- Bootstrap 4.3.1 CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-    <!-- AOS 2.3.1 jQuery plugin CSS (Animations) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- FontAwesome CSS -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
         integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
-    <!-- Startup 3 CSS (Styles for all blocks) -->
+    <link rel="stylesheet" href="/css/skel.css" />
     <link rel="stylesheet" href="/css/style.css" />
-    <!-- jQuery 3.3.1 -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/css/style-xlarge.css" />
 
 </head>
 
-<body>
+<body class="landing">
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="index.html">Transit</a></h1>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="generic.html">Generic</a></li>
+                <li><a href="elements.html">Elements</a></li>
+                <li><a href="#" class="button special">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
 
 
-
-
-    <!-- Navigation 1 -->
-
-    <nav class="navigation_1 bg-light pt-30 pb-30 text-center">
-        <div class="container px-xl-0">
-            <div class="row justify-content-center align-items-center f-16">
-                <div class="mb-20 mb-lg-0 col-lg-3 text-lg-left" data-aos-duration="600" data-aos="fade-down"
-                    data-aos-delay="300">
-                    <a href="/" class="link color-main f-24 bold">Startup 3</a>
-                </div>
-                <div class="col-lg-6" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-                    <a href="/" class="mx-15 link color-main ">Inicio</a>
-                    <a href="/presupuestos" class="mx-15 link color-main ">Acerca de</a>
-                    <a href="#" class="mx-15 link color-main "><i class="fas fa-search"></i></a>
-                </div>
-                <div class="mt-20 mt-lg-0 col-lg-3 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center"
-                    data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-
-
-                    <a href="/usuario/iniciarSesion" class="mr-20 btn sm action-2 f-16">Iniciar Sesión</a>
-
-                </div>
-            </div>
-        </div>
-    </nav>
     <div class="contenido-principal contenedor">
 
         {{#if messages}}
@@ -72,26 +43,13 @@
 
 
     </div>
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/skel-layers.min.js"></script>
+    <script src="/js/init.js"></script>
+    <script src="/dist/bundle.js"></script>
 
-
-
-
-
-    <!-- Bootstrap 4.3.1 JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <!-- Google maps JS API -->
-    <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"></script>
-    <!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- AOS 2.3.1 jQuery plugin JS (Animations) -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
-    <script src="/js/jquery.maskedinput.min.js"></script>
-    <!-- Startup 3 JS (Custom js for all blocks) -->
-    <script src="/js/script.js"></script>
 
 </body>
 
