@@ -7,12 +7,12 @@ const { check } = require("express-validator");
 // Importar los Controller
 const homeController = require("../controllers/homeController");
 const usuarioController = require("../controllers/usuarioController");
-const presupuestoController = require("../controllers/presupuestoController");
+const insumoController = require("../controllers/insumoController");
 const authController = require("../controllers/authController");
 // Rutas
 module.exports = () => {
   // Menu princial
-  router.get("/", homeController.mostrarMenu);
+  router.get("/", homeController.formularioMenu);
 
   // Agregar nuevo usuario
   router.get("/nuevo/usuario", usuarioController.formularioNuevoUsuario);
@@ -39,25 +39,16 @@ module.exports = () => {
   );
 
   // Login del usuario
-  router.get("/usuario/iniciarSesion", usuarioController.iniciarLogin);
+  router.get("/usuario/iniciarSesion", usuarioController.formularioLogin);
   router.post("/usuario/iniciarSesion", authController.autenticarUsario);
 
+  router.get("/insumoUsuario", insumoController.formularioInsumoUsuario);
   router.get(
-    "/presupuestos",
+    "/crearInsumo",
     // authController.verificarUsuario,
-    presupuestoController.presupuestoUsuario
+    insumoController.formularioCrearInsumo
   );
 
-  router.get(
-    "/crear/presupuesto",
-    // authController.verificarUsuario,
-    presupuestoController.crearPresupuesto
-  );
-
-  router.get(
-    "/presupuestos",
-    authController.verificarUsuario,
-    presupuestoController.presupuestoUsuario
-  );
+  router.post("/crearInsumo", insumoController.agregarInsumo);
   return router;
 };

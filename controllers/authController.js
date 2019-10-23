@@ -1,6 +1,5 @@
 const passport = require("passport");
 const mongoose = require("mongoose");
-const Presupuesto = mongoose.model("Presupuesto");
 
 // Autenticar el usuario
 exports.autenticarUsario = passport.authenticate("local", {

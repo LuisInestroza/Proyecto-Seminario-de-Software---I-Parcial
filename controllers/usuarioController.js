@@ -4,7 +4,7 @@ const Usuario = mogoose.model("Usuario");
 const { validationResult } = require("express-validator");
 
 // Iniciar con el login
-exports.iniciarLogin = (req, res) => {
+exports.formularioLogin = (req, res) => {
   res.render("login", {
     nombrePagina: "Login"
   });

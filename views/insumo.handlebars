@@ -6,11 +6,11 @@
         </header>
     </div>
     <div class="container 50%">
-        <form action="#" method="post">
+        <form action="/insumoUsuario" method="post">
 
             <div class="acciones btnVerde">
                 <a href="">Presupuesto</a>
-                <a href="/crear/presupuesto">Nuevo Gasto</a>
+                <a href="/crearInsumo">Nuevo Insumo</a>
             </div>
 
 
@@ -18,26 +18,24 @@
 
                 <thead>
                     <tr>
-                        <td scope="col">Transacción</td>
-                        <td scope="col">Acciones</td>
-                        <td scope="col">Metodo Pago</td>
+                        <td scope="col">Descripción</td>
+                        <td scope="col">Fecha</td>
                         <td scope="col">Total</td>
                     </tr>
                 </thead>
-                <tbody>
-                    {{!-- {{#each links}} --}}
-
+                {{#each insumos}}
+                <tbody class="insumo">
                     <tr>
-                        {{!-- <td>{{numeroCuenta}}</td> --}}
 
-                        <td>1</td>
-                        <td>Pago Luz</td>
-                        <td>Efectivo</td>
-                        <td>L. 1500</td>
+                        <td>{{descripcion}}</td>
+                        <td>{{fecha}}</td>
+                        <td>L. {{total}}</td>
                     </tr>
-                    {{!-- {{/each}} --}}
+
                 </tbody>
+                {{/each}}
             </table>
+
         </form>
     </div>
 </section>
