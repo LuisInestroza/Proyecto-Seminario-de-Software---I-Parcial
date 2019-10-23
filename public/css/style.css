@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url(font-awesome.min.css);
-@import url(http://fonts.googleapis.com/css?family=Raleway:700, 400);
+/* @import url(http://fonts.googleapis.com/css?family=Raleway:700, 400); */
 
 /*
 	Transit by TEMPLATED
@@ -190,6 +190,25 @@ pre code {
 
   margin-right: 40px;
 }
+.acciones a {
+  color: #ffffff;
+  background-color: #3aaf0a;
+  font-size: 1.2em;
+  border-radius: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  margin-top: 3px;
+  padding-bottom: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+}
+.acciones {
+  padding-top: 20px;
+  margin-bottom: 30px;
+  margin-right: 280px;
+}
 button {
   border: none;
   font-size: 1.5em;
@@ -206,6 +225,32 @@ button {
 }
 
 /* ----------------------------------------------------------------------------------------------  */
+/** Flash Messages **/
+.alertas {
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 65px;
+}
+.alerta {
+  padding: 1rem 3rem;
+  color: white;
+  font-size: 2.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 0.3rem;
+}
+.correcto {
+  background-color: #00c897;
+}
+.error {
+  background-color: #c80045;
+}
+.desaparecer {
+  opacity: 0;
+}
 /* --------------------------------------------------------------------------------------------- */
 .align-left {
   text-align: left;

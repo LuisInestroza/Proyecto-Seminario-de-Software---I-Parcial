@@ -1,63 +1,43 @@
-<section class="bg-light form_2">
-    <form action="/presupuestos" method="post" class=" pb-100">
-        <div data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-            <div class="container" id="formulario-listadoPagos" action="/links/pagos">
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
+<section id="three" class="wrapper style3 special">
+    <div class="container">
+        <header class="major">
+            <h2>Iniciar Sesión</h2>
+            <p>Lorem ipsum dolor sit amet. Delectus consequatur, similique quia!</p>
+        </header>
+    </div>
+    <div class="container 50%">
+        <form action="#" method="post">
 
-                        <br>
-                        <br>
-                        <h2>Listado de tus Rubros</h2>
-                        <br>
-                        <br>
-                        <div class="mt-20 mt-lg-0 col-lg-3 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center"
-                            data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
-
-
-                            <a href="/crear/presupuesto" class="mr-20 btn sm action-2 f-16">Nuevo Gasto</a>
-                        </div>
-
-                        <br>
-                        <br>
-                        <br>
-                        <h5>Tu presupuesto: </h5>
-                        <br>
-
-                        <table class="table table-hover">
-
-                            <thead>
-                                <tr>
-                                    <td scope="col">Transacción</td>
-                                    <td scope="col">Acciones</td>
-                                    <td scope="col">Metodo Pago</td>
-                                    <td scope="col">Total</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{!-- {{#each links}} --}}
-
-                                <tr>
-                                    {{!-- <td>{{numeroCuenta}}</td> --}}
-
-                                    <td>1</td>
-                                    <td>Pago Luz</td>
-                                    <td>Efectivo</td>
-                                    <td>L. 1500</td>
-                                </tr>
-                                {{!-- {{/each}} --}}
-                            </tbody>
-                        </table>
-
-
-
-                    </div>
-                </div>
-
-
+            <div class="acciones btnVerde">
+                <a href="">Presupuesto</a>
+                <a href="/crear/presupuesto">Nuevo Gasto</a>
             </div>
 
-        </div>
-    </form>
 
+            <table class="table table-hover">
+
+                <thead>
+                    <tr>
+                        <td scope="col">Transacción</td>
+                        <td scope="col">Acciones</td>
+                        <td scope="col">Metodo Pago</td>
+                        <td scope="col">Total</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{!-- {{#each links}} --}}
+
+                    <tr>
+                        {{!-- <td>{{numeroCuenta}}</td> --}}
+
+                        <td>1</td>
+                        <td>Pago Luz</td>
+                        <td>Efectivo</td>
+                        <td>L. 1500</td>
+                    </tr>
+                    {{!-- {{/each}} --}}
+                </tbody>
+            </table>
+        </form>
+    </div>
 </section>

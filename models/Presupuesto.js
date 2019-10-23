@@ -4,13 +4,17 @@ mongoose.Promise = global.Promise;
 
 // Definir el Schema y los parametros de los presupuestos
 const presupuestoSchema = new mongoose.Schema({
-  movimiento: {
-    type: String,
-    trim: true
-  },
   total: {
     type: String,
     default: 0,
+    trim: true
+  },
+  fecha: {
+    type: Date,
+    trim: true
+  },
+  descripcion: {
+    type: String,
     trim: true
   },
   autor: {

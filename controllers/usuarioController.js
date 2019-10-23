@@ -40,14 +40,15 @@ exports.agregarUsuario = async (req, res, next) => {
   try {
     await usuario.save();
     req.flash("correcto", ["Cuenta Resgistrada"]);
+    res.redirect("/usuario/iniciarSesion");
   } catch (error) {
     erroresArray.push(error);
     req.flash("error", erroresArray);
 
-    // Renderizar
-    res.render("crearUsuario", {
-      nombrePagina: "Nuevo usuario",
-      messages: req.flash()
-    });
+    // // Renderizar
+    // res.render("crearUsuario", {
+    //   nombrePagina: "Nuevo usuario",
+    //   messages: req.flash()
+    // });
   }
 };

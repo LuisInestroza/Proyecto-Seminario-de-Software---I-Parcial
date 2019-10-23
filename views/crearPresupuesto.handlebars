@@ -1,33 +1,33 @@
-<section class="bg-light form_2">
-    <form action="" method="post" class="pt-105 pb-100">
-        <h2 class="mb-45 small" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-            Datos
-        </h2>
+<section id="three" class="wrapper style3 special">
+    <div class="container">
+        <header class="major">
+            <h2>Nuevo Gasto</h2>
+            <p>Lorem ipsum dolor sit amet. Delectus consequatur, similique quia!</p>
+        </header>
+    </div>
 
+    <div class="container 50%">
 
-        <div data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-            <div class="mb-10 f-14 semibold text-uppercase sp-20">
-                Gasto
+        <form action="" method="post">
+            <div class="campo">
+                <div class="row uniform">
+                    <div class="6u 12u$(small)">
+                        <label for="total">Total</label>
+                        <input name="total" placeholder="L. 2000" type="text">
+                    </div>
+                    <div class="6u$ 12u$(small)">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" name="fecha" value="2019-10-21">
+                    </div>
+                    <div class="12u$">
+
+                        <textarea name="descripcion" placeholder="Descripción" rows="6"></textarea>
+                    </div>
+                </div>
+
+                <div class="btn btn-azul">
+                    <button type="submit">Agregar</button>
+                </div>
             </div>
-            <input type="text" name="gastos" placeholder="Vehiculo"
-                class="mb-25 w-full input lg border-gray focus-action-1 color-heading placeholder-gray text-center text-sm-left"
-                required />
-        </div>
-
-        <div data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">
-            <div class="mb-10 f-14 semibold text-uppercase sp-20">
-                Total
-            </div>
-            <input type="text" name="total" placeholder="L.2000"
-                class="mb-25 w-full input lg border-gray focus-action-1 color-heading placeholder-gray text-center text-sm-left"
-                required />
-        </div>
-
-        <div class="mt-25 d-flex flex-wrap align-items-center buttons" data-aos-duration="600" data-aos="fade-down"
-            data-aos-delay="0">
-            <button class="mr-20 mb-20 mb-xl-0 w-210 btn lg action-1">
-                Agregar
-            </button>
-        </div>
-    </form>
+        </form>
 </section>

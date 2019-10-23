@@ -44,13 +44,13 @@ module.exports = () => {
 
   router.get(
     "/presupuestos",
-    authController.verificarUsuario,
+    // authController.verificarUsuario,
     presupuestoController.presupuestoUsuario
   );
 
   router.get(
     "/crear/presupuesto",
-    authController.verificarUsuario,
+    // authController.verificarUsuario,
     presupuestoController.crearPresupuesto
   );
 
