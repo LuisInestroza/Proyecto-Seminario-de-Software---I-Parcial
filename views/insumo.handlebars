@@ -1,10 +1,10 @@
 <section id="three" class="wrapper style3 special">
-    <div class="container">
+    {{!-- <div class="container">
         <header class="major">
             <h2>Iniciar Sesión</h2>
             <p>Lorem ipsum dolor sit amet. Delectus consequatur, similique quia!</p>
         </header>
-    </div>
+    </div> --}}
     <div class="container 50%">
         <form action="/insumoUsuario" method="post">
 
@@ -14,13 +14,18 @@
             </div>
 
 
-            <table class="table table-hover">
+            <p id="total">Total Actual:</p>
+
+
+
+            <table class="table table-hover" id="insumo">
 
                 <thead>
                     <tr>
                         <td scope="col">Descripción</td>
                         <td scope="col">Fecha</td>
                         <td scope="col">Total</td>
+                        <td scope="col">Acciones</td>
                     </tr>
                 </thead>
                 {{#each insumos}}
@@ -30,6 +35,14 @@
                         <td>{{descripcion}}</td>
                         <td>{{fecha}}</td>
                         <td>L. {{total}}</td>
+                        <td>
+                            <div class="contenedor">
+                                <button type="submit" class="accion">Eliminar</button>
+                                <button type="submit" class="accion">Editar</button>
+
+                            </div>
+
+                        </td>
                     </tr>
 
                 </tbody>
