@@ -8,17 +8,17 @@ document.addEventListener("DOMContentLoaded", () => {
     limpiarAlertas(alertas);
   }
 
-  // Mensaje de gardar registro
-  const guardar = document.getElementById("btnGuardar");
-  if (guardar) {
-    guardar.addEventListener("click", guardarEstado);
-  }
+  // // Mensaje de gardar registro
+  // const guardar = document.getElementById("btnGuardar");
+  // if (guardar) {
+  //   guardar.addEventListener("click", guardarEstado);
+  // }
 
-  // Mostrar la sumatoria de los totales
-  const suma = document.getElementById("total");
-  if (suma) {
-    suma.addEventListener("load", sumarTotales);
-  }
+  // // Mostrar la sumatoria de los totales
+  // const suma = document.getElementById("total");
+  // if (suma) {
+  //   suma.addEventListener("load", sumarTotales);
+  // }
 });
 const limpiarAlertas = alertas => {
   // Verificar si el div alertas tiene hijos
@@ -32,21 +32,21 @@ const limpiarAlertas = alertas => {
   }, 3000);
 };
 
-const guardarEstado = () => {
-  Swal.fire("Guardado", "Usuario Registrado", "success");
-};
+// const guardarEstado = () => {
+//   Swal.fire("Guardado", "Usuario Registrado", "success");
+// };
 
-const sumarTotales = () => {
-  const fila = document.querySelectorAll("#insumo tbody tr");
-  const total = 0;
+// const sumarTotales = () => {
+//   const fila = document.querySelectorAll("#insumo tbody tr");
+//   const total = 0;
 
-  fila.forEach(function(e) {
-    const columna = e.querySelectorAll("td");
-    const cantidad = parseFloat(columna[2].textContent);
+//   fila.forEach(function(e) {
+//     const columna = e.querySelectorAll("td");
+//     const cantidad = parseFloat(columna[2].textContent);
 
-    total = cantidad++;
+//     total = cantidad++;
 
-    const sumatoria = document.querySelectorAll("#insumo tfoot tr td");
-    sumatoria.textContent = total.toFixed(2);
-  });
-};
+//     const sumatoria = document.querySelectorAll("#insumo tfoot tr td");
+//     sumatoria.textContent = total.toFixed(2);
+//   });
+// };

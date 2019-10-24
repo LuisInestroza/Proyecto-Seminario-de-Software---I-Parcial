@@ -1,21 +1,37 @@
 const passport = require("passport");
 const mongoose = require("mongoose");
+const Insumo = mongoose.model("Insumo");
 
 // Autenticar el usuario
 exports.autenticarUsario = passport.authenticate("local", {
-  successRedirect: "/presupuestos",
+  successRedirect: "/insumoUsuario",
   failureRedirect: "/usuario/iniciarSesion",
   failureFlash: true,
   badRequestMessage: ["Debes ingresar ambos campos"]
 });
 
-// Verificar que el usuario  se encuentrea logueado e
+// Mostrar el panel de presupuestos del usuario
+exports.formularioInsumoUsuario = async (req, res) => {
+  const insumos = await Insumo.find({ autor: req.user._id });
+  res.render("insumo", {
+    nombrePagina: "Insumos Usuario",
+    cerrarSesion: true,
+    insumos
+  });
+};
 
+// Cerrar sesion del usuario
+exports.cerrarSesion = (req, res) => {
+  req.logout();
+  req.flash("correcto", ["Cuenta Cerrada"]);
+  return res.redirect("/usuario/iniciarSesion");
+};
+// Verificar que el usuario  se encuentrea logueado
 exports.verificarUsuario = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
   }
 
   // Redireccionar a login
-  res.redirec("/usuario/iniciarSesion");
+  res.redirect("/usuario/iniciarSesion");
 };

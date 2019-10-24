@@ -10,18 +10,18 @@ const insumoSchema = new mongoose.Schema({
     trim: true
   },
   fecha: {
-    type: Date,
+    type: String,
     trim: true
   },
   descripcion: {
     type: String,
     trim: true
+  },
+  autor: {
+    type: mongoose.Schema.ObjectId,
+    ref: "Usuarios",
+    required: "El autor es importante"
   }
-  // autor: {
-  //   type: mongoose.Schema.ObjectId,
-  //   ref: "Usuarios",
-  //   required: "El autor es importante"
-  // }
 });
 
 // Exportar el modelo

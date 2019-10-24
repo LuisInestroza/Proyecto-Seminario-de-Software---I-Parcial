@@ -194,7 +194,7 @@ pre code {
   color: #ffffff;
   background-color: #3aaf0a;
   font-size: 1.2em;
-  border-radius: 40px;
+  border-radius: 5px;
   padding-left: 20px;
   padding-right: 20px;
   margin-bottom: 5px;
@@ -212,7 +212,7 @@ pre code {
 button {
   border: none;
   font-size: 1.5em;
-  border-radius: 40px;
+  border-radius: 5px;
   border-top-style: solid;
   border-top-width: 0px;
   padding-top: 10px;
@@ -229,6 +229,7 @@ button {
   padding-top: 5px;
   margin-bottom: 5px;
   padding-bottom: 5px;
+  border-radius: 5px;
 }
 
 /* ----------------------------------------------------------------------------------------------  */

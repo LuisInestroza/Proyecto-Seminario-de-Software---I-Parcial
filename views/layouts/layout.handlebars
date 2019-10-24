@@ -18,6 +18,7 @@
 <body class="landing">
     <!-- Header -->
     <header id="header">
+        {{#if barra}}
         <h1><a href="/">Transit</a></h1>
         <nav id="nav">
             <ul>
@@ -27,7 +28,19 @@
                 <li><a href="/usuario/iniciarSesion" class="button special">Iniciar Sesión</a></li>
             </ul>
         </nav>
+        {{/if}}
+
+        {{#if cerrarSesion}}
+        <h1><a href="/">Transit</a></h1>
+        <nav id="nav">
+            <ul>
+                <li><a href="/cerrarSesion" class="button special">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+        {{/if}}
     </header>
+
+
 
 
     <div class="contenido-principal contenedor">

@@ -42,13 +42,26 @@ module.exports = () => {
   router.get("/usuario/iniciarSesion", usuarioController.formularioLogin);
   router.post("/usuario/iniciarSesion", authController.autenticarUsario);
 
-  router.get("/insumoUsuario", insumoController.formularioInsumoUsuario);
+  // Cerrar sesion del usuario
+  router.get("/cerrarSesion", authController.cerrarSesion);
+
+  // Panel de los presupuestos del usuario
   router.get(
-    "/crearInsumo",
-    // authController.verificarUsuario,
-    insumoController.formularioCrearInsumo
+    "/insumoUsuario",
+    authController.verificarUsuario,
+    authController.formularioInsumoUsuario
   );
 
-  router.post("/crearInsumo", insumoController.agregarInsumo);
+  // crear los insumos del usuario
+  router.get(
+    "/crearInsumo",
+    authController.verificarUsuario,
+    insumoController.formularioCrearInsumo
+  );
+  router.post(
+    "/crearInsumo",
+    authController.verificarUsuario,
+    insumoController.agregarInsumo
+  );
   return router;
 };
