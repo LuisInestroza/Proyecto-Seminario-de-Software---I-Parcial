@@ -16,6 +16,7 @@ exports.formularioInsumoUsuario = async (req, res) => {
   res.render("insumo", {
     nombrePagina: "Insumos Usuario",
     cerrarSesion: true,
+    nombre: req.user.nombre,
     insumos
   });
 };

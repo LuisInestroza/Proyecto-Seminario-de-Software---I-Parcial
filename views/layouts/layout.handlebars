@@ -23,7 +23,7 @@
         <nav id="nav">
             <ul>
                 <li><a href="/">Inicio</a></li>
-                <li><a href="/crearInsumo">Generic</a></li>
+                <li><a href="">Generic</a></li>
                 <li><a href="elements.html">Elements</a></li>
                 <li><a href="/usuario/iniciarSesion" class="button special">Iniciar Sesión</a></li>
             </ul>
@@ -33,7 +33,11 @@
         {{#if cerrarSesion}}
         <h1><a href="/">Transit</a></h1>
         <nav id="nav">
+
             <ul>
+                <li>
+                    <p>Bienvenido {{nombre}}</p>
+                </li>
                 <li><a href="/cerrarSesion" class="button special">Cerrar Sesión</a></li>
             </ul>
         </nav>

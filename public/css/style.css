@@ -207,7 +207,7 @@ pre code {
 .acciones {
   padding-top: 20px;
   margin-bottom: 30px;
-  margin-right: 280px;
+  margin-right: 360px;
 }
 button {
   border: none;
@@ -231,7 +231,18 @@ button {
   padding-bottom: 5px;
   border-radius: 5px;
 }
-
+.contenedor a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #3aaf0a;
+  font-size: 1.05em;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 /* ----------------------------------------------------------------------------------------------  */
 /** Flash Messages **/
 .alertas {
@@ -280,7 +291,8 @@ article.special {
 }
 
 header p {
-  color: #858585;
+  color: #ffffff;
+  font-size: 1.1em;
   position: relative;
   margin: 0 0 1.5em 0;
 }
