@@ -8,25 +8,27 @@
 
     <div class="container 50%">
 
-        <form action="" method="post">
+        <form action="/editarInsumo" method="post">
             <div class="campo">
                 <div class="row uniform">
                     <div class="6u 12u$(small)">
                         <label for="total">Total</label>
-                        <input name="total" placeholder="L. 2000" type="text">
+                        <input name="total" placeholder="L. 2000" type="text" value="{{insumo.total}}">
                     </div>
                     <div class="6u$ 12u$(small)">
                         <label for="fecha">Fecha</label>
-                        <input type="date" name="fecha" value="2019/10/22">
+                        <input type="date" name="fecha" value="{{insumo.fecha}}">
                     </div>
                     <div class="12u$">
 
-                        <textarea name="descripcion" placeholder="Descripción" rows="6"></textarea>
+                        <textarea name="descripcion" placeholder="Descripción" rows="6"
+                            value="{{insumo.descripcion}}"></textarea>
                     </div>
                 </div>
 
+
                 <div class="btn btn-azul">
-                    <button type="submit">Agregar</button>
+                    <button type="submit">Editar</button>
                 </div>
             </div>
         </form>

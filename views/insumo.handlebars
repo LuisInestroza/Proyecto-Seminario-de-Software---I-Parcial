@@ -28,6 +28,7 @@
                         <td scope="col">Acciones</td>
                     </tr>
                 </thead>
+                {{#if insumos.length}}
                 {{#each insumos}}
                 <tbody class="insumo">
                     <tr>
@@ -37,8 +38,8 @@
                         <td>L. {{total}}</td>
                         <td>
                             <div class="contenedor">
-                                <a href="">Eliminar</a>
-                                <a href="">Editar</a>
+                                <a href="#" data-eliminar={{id}}>Eliminar</a>
+                                <a href="/editarInsumo">Editar</a>
                             </div>
 
                         </td>
@@ -46,6 +47,7 @@
 
                 </tbody>
                 {{/each}}
+                {{/if}}
             </table>
 
         </form>

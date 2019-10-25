@@ -13,7 +13,21 @@ const authController = require("../controllers/authController");
 module.exports = () => {
   // Menu princial
   router.get("/", homeController.formularioMenu);
+  // Editar insumo
+  router.get(
+    "/editarInsumo",
+    authController.verificarUsuario,
+    insumoController.formularioEditarInsumo
+  );
 
+  router.post(
+    "/editarInsumo",
+    authController.verificarUsuario,
+    insumoController.editarInsumo
+  );
+
+  // Eliminar insumo
+  router.delete("/insumoEliminar/:id", insumoController.eliminarInsumo);
   // Agregar nuevo usuario
   router.get("/nuevo/usuario", usuarioController.formularioNuevoUsuario);
   router.post(
@@ -63,5 +77,6 @@ module.exports = () => {
     authController.verificarUsuario,
     insumoController.agregarInsumo
   );
+
   return router;
 };

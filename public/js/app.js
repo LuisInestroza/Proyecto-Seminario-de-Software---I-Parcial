@@ -1,4 +1,6 @@
+import axios from "axios";
 import Swal from "sweetalert2";
+// import { Result } from "express-validator";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Limpiar las alertas
@@ -19,6 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // if (suma) {
   //   suma.addEventListener("load", sumarTotales);
   // }
+
+  // Eliminar Insumo
+  const insumoLista = document.querySelector(".table-hover");
+  if (insumoLista) {
+    insumoLista.addEventListener("click", accionEliminar);
+  }
 });
 const limpiarAlertas = alertas => {
   // Verificar si el div alertas tiene hijos
@@ -50,3 +58,46 @@ const limpiarAlertas = alertas => {
 //     sumatoria.textContent = total.toFixed(2);
 //   });
 // };
+
+const accionEliminar = e => {
+  e.preventDefault();
+
+  // Verificar que el usuario elimino
+  if (e.target.dataset.eliminar) {
+    Swal.fire({
+      title: "¿Desea eliminar este gasto?",
+      text: "No se podra recuperar",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Eliminar",
+      cancelButtonText: "Cancelar"
+    }).then(result => {
+      if (result.value) {
+        const url = `${location.origin}/insumoEliminar/${e.target.dataset.eliminar}`;
+
+        // Axios haga la petición de eliminación
+        axios
+          .delete(url, { params: url })
+          .then(function(respuesta) {
+            if (respuesta.status == 200) {
+              Swal.fire("¡Eliminado!", respuesta.data, "success");
+
+              // Eliminar la vacante seleccionada del DOM
+              e.target.parentElement.parentElement.parentElement.parentElement.parentElement.removeChild(
+                e.target.parentElement.parentElement.parentElement.parentElement
+              );
+            }
+          })
+          .catch(() =>
+            Swal.fire({
+              type: "error",
+              title: "Error",
+              text: " Hubo un error al eliminar"
+            })
+          );
+      }
+    });
+  }
+};
