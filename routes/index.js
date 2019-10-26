@@ -13,21 +13,28 @@ const authController = require("../controllers/authController");
 module.exports = () => {
   // Menu princial
   router.get("/", homeController.formularioMenu);
-  // Editar insumo
+
+  // Panel de los presupuestos del usuario
   router.get(
-    "/editarInsumo",
+    "/insumoUsuario",
+    authController.verificarUsuario,
+    authController.formularioInsumoUsuario
+  );
+
+  router.get(
+    "/editarInsumo/:url",
     authController.verificarUsuario,
     insumoController.formularioEditarInsumo
   );
 
   router.post(
-    "/editarInsumo",
+    "/editarInsumo/:url",
     authController.verificarUsuario,
     insumoController.editarInsumo
   );
-
   // Eliminar insumo
   router.delete("/insumoEliminar/:id", insumoController.eliminarInsumo);
+
   // Agregar nuevo usuario
   router.get("/nuevo/usuario", usuarioController.formularioNuevoUsuario);
   router.post(
@@ -58,13 +65,6 @@ module.exports = () => {
 
   // Cerrar sesion del usuario
   router.get("/cerrarSesion", authController.cerrarSesion);
-
-  // Panel de los presupuestos del usuario
-  router.get(
-    "/insumoUsuario",
-    authController.verificarUsuario,
-    authController.formularioInsumoUsuario
-  );
 
   // crear los insumos del usuario
   router.get(

@@ -11,8 +11,11 @@ exports.autenticarUsario = passport.authenticate("local", {
 });
 
 // Mostrar el panel de presupuestos del usuario
-exports.formularioInsumoUsuario = async (req, res) => {
+exports.formularioInsumoUsuario = async (req, res, next) => {
   const insumos = await Insumo.find({ autor: req.user._id });
+
+  if (!insumos) return next();
+
   res.render("insumo", {
     nombrePagina: "Insumos Usuario",
     cerrarSesion: true,

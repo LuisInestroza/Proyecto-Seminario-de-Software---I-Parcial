@@ -1,23 +1,16 @@
 <section id="three" class="wrapper style3 special">
-    {{!-- <div class="container">
-        <header class="major">
-            <h2>Iniciar Sesión</h2>
-            <p>Lorem ipsum dolor sit amet. Delectus consequatur, similique quia!</p>
-        </header>
-    </div> --}}
+    <div class="container">
+
+    </div>
     <div class="container 50%">
-        <form action="/insumoUsuario" method="post">
+        <form action="" method="post">
 
             <div class="acciones btnVerde">
-                <a href="">Presupuesto</a>
+                <a href="/insumo/{{url}}">Presupuesto</a>
                 <a href="/crearInsumo">Nuevo Insumo</a>
             </div>
 
-
             <p id="total">Total Actual:</p>
-
-
-
             <table class="table table-hover" id="insumo">
 
                 <thead>
@@ -26,11 +19,13 @@
                         <td scope="col">Fecha</td>
                         <td scope="col">Total</td>
                         <td scope="col">Acciones</td>
+
                     </tr>
                 </thead>
-                {{#if insumos.length}}
-                {{#each insumos}}
+
                 <tbody class="insumo">
+                    {{#if insumos.length}}
+                    {{#each insumos}}
                     <tr>
 
                         <td>{{descripcion}}</td>
@@ -38,16 +33,23 @@
                         <td>L. {{total}}</td>
                         <td>
                             <div class="contenedor">
-                                <a href="#" data-eliminar={{id}}>Eliminar</a>
-                                <a href="/editarInsumo">Editar</a>
+                                <div class="caja">
+                                    <a href="#" data-eliminar={{id}}>Eliminar</a>
+                                    <a href="/insumo/{{url}}">Editar</a>
+
+                                </div>
                             </div>
 
                         </td>
                     </tr>
+                    {{/each}}
+                    {{/if}}
+                    <tr>
+                        <td>Total</td>
+                    </tr>
 
                 </tbody>
-                {{/each}}
-                {{/if}}
+
             </table>
 
         </form>
