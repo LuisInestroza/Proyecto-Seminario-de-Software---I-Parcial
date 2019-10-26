@@ -1,6 +1,7 @@
 const passport = require("passport");
 const mongoose = require("mongoose");
 const Insumo = mongoose.model("Insumo");
+const Importe = mongoose.model("Importe");
 
 // Autenticar el usuario
 exports.autenticarUsario = passport.authenticate("local", {
@@ -12,15 +13,17 @@ exports.autenticarUsario = passport.authenticate("local", {
 
 // Mostrar el panel de presupuestos del usuario
 exports.formularioInsumoUsuario = async (req, res, next) => {
-  const insumos = await Insumo.find({ autor: req.user._id });
-
-  if (!insumos) return next();
+  const insumo = await Insumo.find({ autor: req.user._id });
+  const importe = await Importe.find({ autor: req.user._id });
+  if (!insumo) return next();
+  if (!importe) return next();
 
   res.render("insumo", {
     nombrePagina: "Insumos Usuario",
     cerrarSesion: true,
     nombre: req.user.nombre,
-    insumos
+    insumo,
+    importe
   });
 };
 

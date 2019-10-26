@@ -16,3 +16,4 @@ mongoose.connection.on("error", error => {
 // Importar modelos
 require("../models/Usuario");
 require("../models/Insumo");
+require("../models/Importe");

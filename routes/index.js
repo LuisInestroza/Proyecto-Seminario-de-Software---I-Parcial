@@ -9,6 +9,8 @@ const homeController = require("../controllers/homeController");
 const usuarioController = require("../controllers/usuarioController");
 const insumoController = require("../controllers/insumoController");
 const authController = require("../controllers/authController");
+const importeController = require("../controllers/importeController");
+
 // Rutas
 module.exports = () => {
   // Menu princial
@@ -76,6 +78,18 @@ module.exports = () => {
     "/crearInsumo",
     authController.verificarUsuario,
     insumoController.agregarInsumo
+  );
+
+  router.get(
+    "/crearImporte",
+    authController.verificarUsuario,
+    importeController.formularioCrearImporte
+  );
+
+  router.post(
+    "/crearImporte",
+    authController.verificarUsuario,
+    importeController.crearImporte
   );
 
   return router;
