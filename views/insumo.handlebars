@@ -10,16 +10,14 @@
                 <a href="/crearInsumo">Nuevo Gasto</a>
             </div>
 
-
-
-
             <table class="table table-hover" id="insumo">
-                {{#if importe.length}}
-                {{#each importe}}
-                <p>Limite de presupuesto: L. {{cantidad}}</p>
-                {{/each}}
-                {{/if}}
-
+                <div>
+                    {{#if importe.length}}
+                    {{#each importe}}
+                    <p>Limite de presupuesto: L. {{cantidad}}</p>
+                    {{/each}}
+                    {{/if}}
+                </div>
                 <thead>
                     <tr>
                         <td scope="col">Descripción</td>
