@@ -26,16 +26,16 @@
                         <td scope="col">Acciones</td>
 
                     </tr>
-                </thead>
+
 
                 <tbody class="insumo">
                     {{#if insumo.length}}
                     {{#each insumo}}
                     <tr>
 
-                        <td>{{descripcion}}</td>
-                        <td>{{fecha}}</td>
-                        <td>L. {{total}}</td>
+                        <td class="ColumnaA">{{descripcion}}</td>
+                        <td class="ColumnaB">{{fecha}}</td>
+                        <td class="ColumnaC">{{total}}</td>
                         <td>
                             <div class="contenedor">
                                 <div class="caja">
@@ -50,10 +50,13 @@
                     {{/each}}
                     {{/if}}
                     <tr>
-                        <td>Total</td>
+                        <td class="Total">Total</td>
+                        <td class="Total C">L. </td>
+
                     </tr>
 
                 </tbody>
+                </thead>
 
             </table>
 

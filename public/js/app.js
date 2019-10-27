@@ -16,18 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
   //   guardar.addEventListener("click", guardarEstado);
   // }
 
-  // // Mostrar la sumatoria de los totales
-  // const suma = document.getElementById("total");
-  // if (suma) {
-  //   suma.addEventListener("load", sumarTotales);
-  // }
-
   // Eliminar Insumo
   const insumoLista = document.querySelector(".table-hover");
   if (insumoLista) {
     insumoLista.addEventListener("click", accionEliminar);
   }
 });
+
 const limpiarAlertas = alertas => {
   // Verificar si el div alertas tiene hijos
   const interval = setInterval(() => {
@@ -42,21 +37,6 @@ const limpiarAlertas = alertas => {
 
 // const guardarEstado = () => {
 //   Swal.fire("Guardado", "Usuario Registrado", "success");
-// };
-
-// const sumarTotales = () => {
-//   const fila = document.querySelectorAll("#insumo tbody tr");
-//   const total = 0;
-
-//   fila.forEach(function(e) {
-//     const columna = e.querySelectorAll("td");
-//     const cantidad = parseFloat(columna[2].textContent);
-
-//     total = cantidad++;
-
-//     const sumatoria = document.querySelectorAll("#insumo tfoot tr td");
-//     sumatoria.textContent = total.toFixed(2);
-//   });
 // };
 
 const accionEliminar = e => {
@@ -101,3 +81,18 @@ const accionEliminar = e => {
     });
   }
 };
+
+// Sumar cada total de los gastos
+document.querySelectorAll(".Total").forEach(function(total) {
+  if (total.classList.length > 1) {
+    var letra = total.classList[1];
+    var suma = 0;
+
+    document.querySelectorAll(".Columna" + letra).forEach(function(celda) {
+      var valor = parseFloat(celda.innerHTML);
+      suma += valor;
+    });
+
+    total.innerHTML = suma;
+  }
+});
