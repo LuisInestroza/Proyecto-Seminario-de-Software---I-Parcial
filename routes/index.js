@@ -80,6 +80,7 @@ module.exports = () => {
     insumoController.agregarInsumo
   );
 
+  // Crear el presupuesto del usuario
   router.get(
     "/crearImporte",
     authController.verificarUsuario,
@@ -92,5 +93,17 @@ module.exports = () => {
     importeController.crearImporte
   );
 
+  // Editar el prepuesto
+  router.get(
+    "/editarPresupuesto",
+    authController.verificarUsuario,
+    importeController.formularioEditarImporte
+  );
+
+  router.post(
+    "/editarPresupuesto",
+    authController.verificarUsuario,
+    importeController.editarImporte
+  );
   return router;
 };

@@ -4,7 +4,7 @@ const Insumo = mongoose.model("Insumo");
 
 exports.formularioCrearInsumo = (req, res) => {
   res.render("crearInsumo", {
-    nombrePagina: "Crear Presupuesto"
+    nombrePagina: "Nuevo Gasto"
   });
 };
 

@@ -6,15 +6,17 @@
         <form action="" method="post">
 
             <div class="acciones btnVerde">
-                <a href="/crearImporte">Importe</a>
+                <a href="/crearImporte">Presupuesto</a>
                 <a href="/crearInsumo">Nuevo Gasto</a>
+                <a href="/editarPresupuesto">Editar Presupuesto</a>
             </div>
 
             <table class="table table-hover" id="insumo">
                 <div>
                     {{#if importe.length}}
                     {{#each importe}}
-                    <p>Limite de presupuesto: L. {{cantidad}}</p>
+                    <label for="presupuesto">Limite de presupuesto:</label>
+                    <p class="presupuesto">{{cantidad}}</p>
                     {{/each}}
                     {{/if}}
                 </div>
@@ -51,7 +53,8 @@
                     {{/if}}
                     <tr>
                         <td class="Total">Total</td>
-                        <td class="Total C">L. </td>
+                        <td></td>
+                        <td class="Total C"></td>
 
                     </tr>
 

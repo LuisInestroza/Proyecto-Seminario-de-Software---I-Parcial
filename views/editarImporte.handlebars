@@ -1,0 +1,25 @@
+<section id="three" class="wrapper style3 special">
+    <div class="container">
+        <header class="major">
+            <h2>Editar Presupusto</h2>
+            <p>Cambia tu presupuesto</p>
+        </header>
+    </div>
+
+    <div class="container 50%">
+
+        <form action="/editarPresupuesto" method="post">
+            <div class="campo">
+                <div class="">
+                    <label for="cantidad">Tu presupuesto</label>
+                    <input type="text" name="cantidad" placeholder="Ingresa tu presupuesto maximo"
+                        value="{{importe.cantidad}}">
+                </div>
+
+
+                <div class="btn btn-azul">
+                    <button id="btnGuardar" type="submit">Ingresar</button>
+                </div>
+            </div>
+        </form>
+</section>

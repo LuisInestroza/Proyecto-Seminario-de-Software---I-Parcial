@@ -21,6 +21,34 @@ document.addEventListener("DOMContentLoaded", () => {
   if (insumoLista) {
     insumoLista.addEventListener("click", accionEliminar);
   }
+
+  // Sumar cada total de los gastos
+  document.querySelectorAll(".Total").forEach(function(total) {
+    if (total.classList.length > 1) {
+      var letra = total.classList[1];
+      var suma = 0;
+
+      document.querySelectorAll(".Columna" + letra).forEach(function(celda) {
+        var valor = parseFloat(celda.innerHTML);
+        suma += valor;
+      });
+
+      total.innerHTML = suma.toFixed(2);
+    }
+  });
+
+  // Mostrar alerta cuando se pasa el limite de presupuesto
+  const presupuesto = document.querySelectorAll(".presupuesto");
+  if (presupuesto.length) {
+    const total = document.querySelectorAll(".Total C");
+
+    var presupuestoNeto = parseFloat(presupuesto).toFixed(2);
+    var totalNeto = parseFloat(total).toFixed(2);
+
+    if (presupuestoNeto <= totalNeto) {
+      Swal.fire("Alerta", "Haz superado tu limite de presupuesto", "warning");
+    }
+  }
 });
 
 const limpiarAlertas = alertas => {
@@ -81,18 +109,3 @@ const accionEliminar = e => {
     });
   }
 };
-
-// Sumar cada total de los gastos
-document.querySelectorAll(".Total").forEach(function(total) {
-  if (total.classList.length > 1) {
-    var letra = total.classList[1];
-    var suma = 0;
-
-    document.querySelectorAll(".Columna" + letra).forEach(function(celda) {
-      var valor = parseFloat(celda.innerHTML);
-      suma += valor;
-    });
-
-    total.innerHTML = suma;
-  }
-});
