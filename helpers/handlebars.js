@@ -1,5 +1,3 @@
-const Swal = require("sweetalert2");
-
 module.exports = {
   mostrarAlertas: (errors = {}, alerts) => {
     const categoria = Object.keys(errors);

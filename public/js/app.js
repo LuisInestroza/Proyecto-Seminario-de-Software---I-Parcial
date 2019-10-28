@@ -1,6 +1,5 @@
 import axios from "axios";
 import Swal from "sweetalert2";
-// import { Result } from "express-validator";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Limpiar las alertas
@@ -9,12 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (alertas) {
     limpiarAlertas(alertas);
   }
-
-  // // Mensaje de gardar registro
-  // const guardar = document.getElementById("btnGuardar");
-  // if (guardar) {
-  //   guardar.addEventListener("click", guardarEstado);
-  // }
 
   // Eliminar Insumo
   const insumoLista = document.querySelector(".table-hover");
@@ -40,12 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Mostrar alerta cuando se pasa el limite de presupuesto
   const presupuesto = document.querySelectorAll(".presupuesto");
   if (presupuesto.length) {
-    const total = document.querySelectorAll(".Total C");
+    const total1 = document.querySelectorAll(".Total C");
 
-    var presupuestoNeto = parseFloat(presupuesto).toFixed(2);
-    var totalNeto = parseFloat(total).toFixed(2);
+    var presupuestoFinal = parseFloat(presupuesto).toFixed(2);
+    var totalFinal = parseFloat(total1.length).toFixed(2);
 
-    if (presupuestoNeto <= totalNeto) {
+    if (presupuestoFinal >= totalFinal) {
       Swal.fire("Alerta", "Haz superado tu limite de presupuesto", "warning");
     }
   }
@@ -62,10 +55,6 @@ const limpiarAlertas = alertas => {
     }
   }, 3000);
 };
-
-// const guardarEstado = () => {
-//   Swal.fire("Guardado", "Usuario Registrado", "success");
-// };
 
 const accionEliminar = e => {
   e.preventDefault();

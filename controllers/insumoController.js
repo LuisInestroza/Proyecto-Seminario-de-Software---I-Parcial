@@ -20,7 +20,7 @@ exports.agregarInsumo = async (req, res, next) => {
 
 // Editar insumo
 exports.formularioEditarInsumo = async (req, res, next) => {
-  const insumo = await Insumo.findOne({ url: req.params.url });
+  const insumo = await Insumo.findOne({ autor: req.user._id });
 
   // Si existe un datos
   if (!insumo) return next();
@@ -39,7 +39,7 @@ exports.editarInsumo = async (req, res, next) => {
   console.log(editarInsumo);
 
   const insumo = await Insumo.findOneAndUpdate(
-    { url: req.params.url },
+    { autor: req.user._id },
     editarInsumo,
     {
       new: true,

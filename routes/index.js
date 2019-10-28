@@ -24,13 +24,13 @@ module.exports = () => {
   );
 
   router.get(
-    "/editarInsumo/:url",
+    "/editarInsumo",
     authController.verificarUsuario,
     insumoController.formularioEditarInsumo
   );
 
   router.post(
-    "/editarInsumo/:url",
+    "/editarInsumo",
     authController.verificarUsuario,
     insumoController.editarInsumo
   );

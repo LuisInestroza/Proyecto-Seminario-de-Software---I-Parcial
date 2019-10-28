@@ -16,7 +16,7 @@
                     {{#if importe.length}}
                     {{#each importe}}
                     <label for="presupuesto">Limite de presupuesto:</label>
-                    <p class="presupuesto">{{cantidad}}</p>
+                    <p class="presupuesto" id="cantidad">{{cantidad}}</p>
                     {{/each}}
                     {{/if}}
                 </div>
@@ -42,11 +42,10 @@
                             <div class="contenedor">
                                 <div class="caja">
                                     <a href="#" data-eliminar={{id}}>Eliminar</a>
-                                    <a href="/editarInsumo/{{url}}">Editar</a>
+                                    <a href="/editarInsumo">Editar</a>
 
                                 </div>
                             </div>
-
                         </td>
                     </tr>
                     {{/each}}
@@ -54,7 +53,7 @@
                     <tr>
                         <td class="Total">Total</td>
                         <td></td>
-                        <td class="Total C"></td>
+                        <td class="Total C" id="total"></td>
 
                     </tr>
 
