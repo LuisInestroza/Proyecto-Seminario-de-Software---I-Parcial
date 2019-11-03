@@ -105,5 +105,9 @@ module.exports = () => {
     authController.verificarUsuario,
     importeController.editarImporte
   );
+
+  // Editar la contraseña
+  router.get("/restablecerPassword", authController.formularioCambiarPassword);
+
   return router;
 };

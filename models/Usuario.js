@@ -20,7 +20,9 @@ const usuarioSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true
-  }
+  },
+  toke: String,
+  expire: Date
 });
 
 // Metodo para hast

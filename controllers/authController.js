@@ -42,3 +42,10 @@ exports.verificarUsuario = (req, res, next) => {
   // Redireccionar a login
   res.redirect("/usuario/iniciarSesion");
 };
+
+// Mostrar el formulario de restablecer contraseña
+exports.formularioCambiarPassword = (req, res) => {
+  res.render("restablecerPassword", {
+    nombrePagina: "Restabler tu contraseña"
+  });
+};
