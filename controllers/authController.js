@@ -2,6 +2,9 @@ const passport = require("passport");
 const mongoose = require("mongoose");
 const Insumo = mongoose.model("Insumo");
 const Importe = mongoose.model("Importe");
+const Usuario = mongoose.model("Usuario");
+const crypto = require("crypto");
+const enviarEmail = require("../handlers/email");
 
 // Autenticar el usuario
 exports.autenticarUsario = passport.authenticate("local", {
@@ -48,4 +51,81 @@ exports.formularioCambiarPassword = (req, res) => {
   res.render("restablecerPassword", {
     nombrePagina: "Restabler tu contraseña"
   });
+};
+
+exports.enviarPeticion = async (req, res) => {
+  const usuario = await Usuario.findOne({ email: req.body.email });
+
+  // Validar que el usuario existe
+  if (!usuario) {
+    req.flash("error", ["El correo electrónico no existe"]);
+    return res.redirect("/restablecerPassword");
+  }
+
+  // Si el usuario existe
+  usuario.token = crypto.randomBytes(20).toString("hex");
+  usuario.expire = Date.now() + 3600000;
+
+  // Guardar cambios
+  await usuario.save();
+
+  // Url
+  const restUrl = `http://${req.headers.host}/restablecerPassword/${usuario.token}`;
+
+  // Enviar notificacion
+  await enviarEmail.enviar({
+    usuario,
+    subject: "Reestablecer tu contraseña",
+    template: "resetearPassword",
+    restUrl
+  });
+
+  // Redireccionar
+  req.flash("correcto", ["Verifica tu correo electronico"]);
+
+  res.redirect("/usuario/iniciarSesion");
+};
+
+// Mostrar el formulario de cambiar la contraseña
+exports.formularioNuevaPassword = async (req, res) => {
+  const usuario = await Usuario.findOne({
+    token: req.params.token,
+    expire: { $gt: Date.now() }
+  });
+
+  if (!usuario) {
+    req.flash("error", ["Solicutud Expirada, vuelve a solicitar"]);
+    return res.redirect("/restablecerPassword");
+  }
+
+  res.render("nuevaPassword", {
+    nombrePagina: "Nueva Contraseña"
+  });
+};
+
+// Guardar la nueva contraseña
+exports.almacenarNuevaPassword = async (req, res) => {
+  const usuario = await Usuario.findOne({
+    token: req.params.token,
+    expire: { $gt: Date.now() }
+  });
+
+  // Si no existe el usuario
+  if (!usuario) {
+    req.flash("error", ["Solicutud Expirada, vuelve a solicitar"]);
+    return res.redirect("/restablecerPassword");
+  }
+
+  // Nueva constraseña
+  usuario.password = req.body.password;
+  // Limpiar valores
+  usuario.token = undefined;
+  usuario.expire = undefined;
+
+  // Guardar valores
+  await usuario.save();
+
+  // Redireccionar los campos
+  req.flash("correcto", "Contraseña modificada");
+  res.redirect("/usuario/iniciarSesion");
 };

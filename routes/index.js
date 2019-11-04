@@ -108,6 +108,17 @@ module.exports = () => {
 
   // Editar la contraseña
   router.get("/restablecerPassword", authController.formularioCambiarPassword);
+  router.post("/restablecerPassword", authController.enviarPeticion);
+
+  // cambiar la contraseña
+  router.get(
+    "/restablecerPassword/:token",
+    authController.formularioNuevaPassword
+  );
+  router.post(
+    "/restablecerPassword/:token",
+    authController.almacenarNuevaPassword
+  );
 
   return router;
 };

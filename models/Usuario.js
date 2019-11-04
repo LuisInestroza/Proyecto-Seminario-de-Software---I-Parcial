@@ -21,7 +21,7 @@ const usuarioSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  toke: String,
+  token: String,
   expire: Date
 });
 
