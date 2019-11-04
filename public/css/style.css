@@ -265,6 +265,27 @@ button {
   border-radius: 4px;
   border: none;
 }
+
+/* Error 404 de pagina */
+.paginaError {
+  background: #3cadd4;
+}
+.paginaError h2 {
+  color: #ffffff;
+  text-align: center;
+  margin: 100px;
+}
+.message {
+  font-size: 4em;
+  text-align: left;
+}
+.imagen {
+  width: 40em;
+  height: 30em;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 /* ----------------------------------------------------------------------------------------------  */
 /** Flash Messages **/
 .alertas {

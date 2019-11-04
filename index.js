@@ -10,6 +10,7 @@ const MongoStore = require("connect-mongo")(session);
 const bodyParser = require("body-parser");
 const flash = require("connect-flash");
 const passport = require("./config/passport");
+const crearError = require("http-errors");
 
 require("dotenv").config({ path: "variables.env" });
 
@@ -57,5 +58,23 @@ app.use((req, res, next) => {
 });
 
 app.use("/", router());
+
+// Error 404
+app.use((req, res, next) => {
+  next(crearError(404, "ERROR: La página no existe"));
+});
+
+// Errores
+app.use((error, req, res, next) => {
+  const status = error.status || 500;
+  res.locals.status = status;
+  res.status(status);
+
+  // Mostrar la pagina
+  res.render("error", {
+    status,
+    message: error.message
+  });
+});
 
 app.listen(process.env.PORT);
