@@ -271,21 +271,74 @@ button {
   background: #3cadd4;
 }
 .paginaError h2 {
-  color: #ffffff;
-  text-align: center;
-  margin: 100px;
+  padding-top: 70px;
+  font-size: 2em;
+  margin-left: 100px;
+
+  color: #2c2f35;
 }
 .message {
-  font-size: 4em;
-  text-align: left;
+  margin-bottom: 0px;
+  float: left;
+  /* margin-left: 50px; */
 }
-.imagen {
-  width: 40em;
-  height: 30em;
-  padding-left: 30px;
-  padding-right: 30px;
+.error404 {
+  float: left;
+  margin-top: 250px;
+  margin-left: 240px;
+  color: #2c2f35;
+  font-size: 7em;
+}
+.icono {
+  margin-top: 150px;
+  margin-left: 100px;
+  font-size: 25em;
+  color: #2c2f35;
+  float: left;
+}
+.volver a {
+  text-decoration: none;
+  color: #ffffff;
+  background: #2c2f35;
+  font-size: 1.4em;
+  border-radius: 7px;
+  margin-bottom: 7px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
+.volver {
+  padding-left: 250px;
+  margin-top: 30px;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  .paginaError {
+    display: block;
+  }
+  .paginaError h2 {
+    display: block;
+  }
+  .volver a {
+    display: block;
+  }
+  .icono {
+    display: block;
+  }
+  .paginaError h2 {
+    display: block;
+  }
+  .error404 {
+    display: block;
+    text-align: left;
+  }
+  .message {
+    display: block;
+  }
+}
 /* ----------------------------------------------------------------------------------------------  */
 /** Flash Messages **/
 .alertas {

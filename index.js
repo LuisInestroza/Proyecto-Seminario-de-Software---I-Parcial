@@ -61,7 +61,7 @@ app.use("/", router());
 
 // Error 404
 app.use((req, res, next) => {
-  next(crearError(404, "ERROR: La página no existe"));
+  next(crearError(404, "La página que buscas no existe"));
 });
 
 // Errores
