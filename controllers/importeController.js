@@ -11,7 +11,6 @@ exports.crearImporte = async (req, res, next) => {
   const importe = new Importe(req.body);
   importe.autor = req.user._id;
   const nuevoImporte = await importe.save();
-  console.log(nuevoImporte);
 
   req.flash("correcto", ["Importe Agregado"]);
   res.redirect("/insumoUsuario");
@@ -31,9 +30,6 @@ exports.formularioEditarImporte = async (req, res, next) => {
 
 exports.editarImporte = async (req, res, next) => {
   const editarImporte = req.body;
-
-  console.log(editarImporte);
-
   const importe = await Importe.findOneAndUpdate(
     { autor: req.user._id },
     editarImporte,

@@ -339,6 +339,15 @@ button {
     display: block;
   }
 }
+.img {
+  max-width: 300px;
+  width: 100%;
+}
+.perfil {
+  width: 120px;
+  align-self: flex-start;
+  margin-right: 1rem;
+}
 /* ----------------------------------------------------------------------------------------------  */
 /** Flash Messages **/
 .alertas {

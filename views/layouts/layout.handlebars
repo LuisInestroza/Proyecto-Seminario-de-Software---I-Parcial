@@ -32,12 +32,23 @@
         <h1><a href="/">FINANCE</a></h1>
         <nav id="nav">
 
+
             <ul>
+
                 <li>
                     <p>Bienvenido {{nombre}}</p>
                 </li>
+                <li>
+                    <a href="/editarPerfil" class="button special">Editar Perfil</a>
+                </li>
 
                 <li><a href="/cerrarSesion" class="button special">Cerrar Sesión</a></li>
+                <li>
+
+                    <img src="/uploads/perfiles/{{imagen}}" />
+
+                </li>
+
             </ul>
         </nav>
         {{/if}}

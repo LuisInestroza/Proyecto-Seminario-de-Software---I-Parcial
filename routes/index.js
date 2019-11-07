@@ -24,13 +24,13 @@ module.exports = () => {
   );
 
   router.get(
-    "/editarInsumo",
+    "/editarInsumo/:url",
     authController.verificarUsuario,
     insumoController.formularioEditarInsumo
   );
 
   router.post(
-    "/editarInsumo",
+    "/editarInsumo/:url",
     authController.verificarUsuario,
     insumoController.editarInsumo
   );
@@ -118,6 +118,20 @@ module.exports = () => {
   router.post(
     "/restablecerPassword/:token",
     authController.almacenarNuevaPassword
+  );
+
+  // Editar Perfil
+  router.get(
+    "/editarPerfil",
+    authController.verificarUsuario,
+    usuarioController.formularioEditarPerfil
+  );
+
+  router.post(
+    "/editarPerfil",
+    authController.verificarUsuario,
+    usuarioController.subirImagen,
+    usuarioController.editarPerfil
   );
 
   return router;

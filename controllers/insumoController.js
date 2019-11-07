@@ -12,7 +12,6 @@ exports.agregarInsumo = async (req, res, next) => {
   const insumo = new Insumo(req.body);
   insumo.autor = req.user._id;
   const nuevoInsumo = await insumo.save();
-  console.log(nuevoInsumo);
 
   req.flash("correcto", ["Insumo Agregado"]);
   res.redirect("/insumoUsuario");
@@ -20,7 +19,7 @@ exports.agregarInsumo = async (req, res, next) => {
 
 // Editar insumo
 exports.formularioEditarInsumo = async (req, res, next) => {
-  const insumo = await Insumo.findOne({ autor: req.user._id });
+  const insumo = await Insumo.findOne({ url: req.params.url });
 
   // Si existe un datos
   if (!insumo) return next();
@@ -36,10 +35,8 @@ exports.formularioEditarInsumo = async (req, res, next) => {
 exports.editarInsumo = async (req, res, next) => {
   const editarInsumo = req.body;
 
-  console.log(editarInsumo);
-
   const insumo = await Insumo.findOneAndUpdate(
-    { autor: req.user._id },
+    { url: req.params.url },
     editarInsumo,
     {
       new: true,
@@ -47,7 +44,7 @@ exports.editarInsumo = async (req, res, next) => {
     }
   );
 
-  res.redirect("/insumoUsuario");
+  res.redirect("/insumoUsuario/");
 };
 
 // Elimaniar un insumo

@@ -18,6 +18,7 @@ exports.autenticarUsario = passport.authenticate("local", {
 exports.formularioInsumoUsuario = async (req, res, next) => {
   const insumo = await Insumo.find({ autor: req.user._id });
   const importe = await Importe.find({ autor: req.user._id });
+
   if (!insumo) return next();
   if (!importe) return next();
 

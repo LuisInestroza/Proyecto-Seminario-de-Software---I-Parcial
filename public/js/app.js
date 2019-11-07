@@ -31,16 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Mostrar alerta cuando se pasa el limite de presupuesto
-  const presupuesto = document.querySelectorAll(".presupuesto");
-  if (presupuesto.length) {
-    const total1 = document.querySelectorAll(".Total C");
-
-    var presupuestoFinal = parseFloat(presupuesto).toFixed(2);
-    var totalFinal = parseFloat(total1.length).toFixed(2);
-
-    if (presupuestoFinal >= totalFinal) {
-      Swal.fire("Alerta", "Haz superado tu limite de presupuesto", "warning");
-    }
+  // Captar los valores
+  const presupuesto = parseFloat(document.getElementById("cantidad").innerHTML);
+  const total = parseFloat(document.getElementById("total").innerHTML);
+  // validar que el presupuesto no se exeda
+  if (presupuesto < total) {
+    // Mostrar mensaje
+    Swal.fire("Alerta", "Haz superado tu limite de presupuesto", "warning");
   }
 });
 
@@ -96,5 +93,7 @@ const accionEliminar = e => {
           );
       }
     });
+  } else if (e.target.tagName === "A") {
+    window.location.href = e.target.href;
   }
 };
