@@ -24,7 +24,7 @@
   "homepage": "https://github.com/luisdario71196/Proyecto-Seminario-de-Software---I-Parcial#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^3.1.0"
+    "express-handlebars": "^5.3.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.3"
